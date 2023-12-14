@@ -1,0 +1,33 @@
+def calculate_sum_or_triple(num1, num2, num3):
+  """
+  This function calculates the sum of three numbers or triples them if they are equal.
+
+  Args:
+      num1: The first number.
+      num2: The second number.
+      num3: The third number.
+
+  Returns:
+      The sum of the numbers if they are not equal, or their triple if they are equal.
+  """
+  if num1 == num2 and num2 == num3:
+    result = num1 * 3
+  else:
+    result = num1 + num2 + num3
+  return result
+
+# Example usage
+number1 = input("Enter the first number: ")
+number2 = input("Enter the second number: ")
+number3 = input("Enter the third number: ")
+
+try:
+  # Convert inputs to numbers if necessary
+  number1 = int(number1) if isinstance(number1, str) else number1
+  number2 = int(number2) if isinstance(number2, str) else number2
+  number3 = int(number3) if isinstance(number3, str) else number3
+
+  result = calculate_sum_or_triple(number1, number2, number3)
+  print(f"The result is: {result}")
+except ValueError:
+  print("Please enter valid numbers.")
